@@ -2,11 +2,11 @@
 
 API Gateway para microservicios construido con Spring Boot y Spring Cloud Gateway.
 
-## 📋 Descripción
+## Descripción
 
 Este proyecto es un API Gateway que actúa como punto de entrada único para un sistema de microservicios. El gateway enruta las solicitudes a los diferentes microservicios según la ruta de la solicitud, proporcionando una capa de abstracción y gestión centralizada del tráfico.
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - **Java**: 17
 - **Spring Boot**: 3.3.1
@@ -15,7 +15,7 @@ Este proyecto es un API Gateway que actúa como punto de entrada único para un 
 - **Maven**: Gestión de dependencias y construcción del proyecto
 - **Spring Boot DevTools**: Para recarga rápida durante el desarrollo
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 api-gateway/
@@ -36,7 +36,7 @@ api-gateway/
 └── mvnw.cmd
 ```
 
-## 🔗 Microservicios Configurados
+## Microservicios Configurados
 
 El API Gateway está configurado para enrutar a los siguientes microservicios:
 
@@ -49,7 +49,7 @@ El API Gateway está configurado para enrutar a los siguientes microservicios:
 | **Historial** | `/api/historial/**` | 8085 |
 | **Notificaciones** | `/api/notificaciones/**` | 8086 |
 
-## 🚀 Configuración
+## Configuración
 
 ### Puerto del Gateway
 El API Gateway se ejecuta en el puerto **8080**.
@@ -75,34 +75,7 @@ spring.cloud.gateway.routes[0].predicates[0]=Path=/api/citas/**
 - Java 17 o superior
 - Maven 3.6+ (o usar los scripts mvnw/mvnw.cmd incluidos)
 
-### Ejecutar con Maven
-
-```bash
-# Usar Maven instalado
-mvn spring-boot:run
-
-# O usar el script incluido
-./mvnw spring-boot:run  # Linux/Mac
-mvnw.cmd spring-boot:run  # Windows
-```
-
-### Ejecutar el JAR compilado
-
-```bash
-# Compilar el proyecto
-mvn clean package
-
-# Ejecutar el JAR
-java -jar target/api-gateway-0.0.1-SNAPSHOT.jar
-```
-
-## 🧪 Ejecutar Tests
-
-```bash
-mvn test
-```
-
-## 📝 Uso del API Gateway
+## Uso del API Gateway
 
 Una vez que el gateway esté ejecutándose, puedes acceder a los microservicios a través de las rutas configuradas:
 
@@ -121,27 +94,13 @@ curl http://localhost:8080/api/medicos/
 
 El gateway reenviará estas solicitudes a los puertos correspondientes de cada microservicio.
 
-## 🔧 Configuración Adicional
-
-### Logging
-
-El logging de Spring Cloud Gateway está configurado en nivel DEBUG para facilitar el desarrollo:
-
-```properties
-logging.level.org.springframework.cloud.gateway=DEBUG
-```
-
-### DevTools
-
-Spring Boot DevTools está habilitado para permitir recarga rápida durante el desarrollo. Los cambios en los archivos se recargan automáticamente.
-
-## 📦 Dependencias Principales
+## Dependencias Principales
 
 - `spring-cloud-starter-gateway`: Funcionalidad principal del API Gateway
 - `spring-boot-devtools`: Herramientas de desarrollo
 - `spring-boot-starter-test`: Dependencias para testing
 
-## 🌐 Arquitectura
+## Arquitectura
 
 ```
 Cliente → API Gateway (8080) → Microservicios
